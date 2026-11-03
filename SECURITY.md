@@ -7,7 +7,7 @@ BRAQON builds payment and point-of-sale software, so we take security reports se
 **Please do not open a public issue, discussion or pull request for security problems.**
 
 1. Use GitHub's private reporting: open the affected repository, go to **Security → Report a vulnerability**.
-2. If that is not available, email **bquintianromero@gmail.com** with the subject `SECURITY: <repository>`.
+2. If that is not available, email **security@braqon.dev** with the subject `SECURITY: <repository>`.
 
 Include what you can: affected repository and version, steps to reproduce, impact, and any proof of concept.
 

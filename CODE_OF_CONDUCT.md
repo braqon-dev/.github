@@ -6,4 +6,4 @@ In short: be respectful, assume good intent, welcome newcomers, and keep critici
 
 ## Reporting
 
-Report unacceptable behavior to **bquintianromero@gmail.com**. Reports are handled privately, and the maintainers will act according to the enforcement guidelines of the Contributor Covenant.
+Report unacceptable behavior to **hola@braqon.dev**. Reports are handled privately, and the maintainers will act according to the enforcement guidelines of the Contributor Covenant.
