@@ -29,8 +29,8 @@ INK = "#0b0f14"
 
 # ── Content ──────────────────────────────────────────────────────────────────
 
-TAGLINE = "open-source payments, POS and developer tools"
-SUB = "built in Latin America · secure by default · documented like we mean it"
+TAGLINE = "payments, POS and developer tools"
+SUB = "built in Latin America · open source at the core · secure by default"
 PROMPT = "git init the-next-thing"
 
 # Official brand icons (24x24 paths) from Simple Icons 13.0.0, CC0: https://simpleicons.org
@@ -55,13 +55,13 @@ LINKS = [
 ROADMAP = [
     # (stage, title, detail, state)
     ("NOW", "express-version-api 2.x", "versioned Express APIs · npm + JSR", "live"),
-    ("NEXT", "BRAQON POS", "open-source point of sale", "soon"),
+    ("NEXT", "BRAQON POS", "open-core point of sale", "soon"),
     ("LATER", "payments toolkit", "SDKs for LATAM payment rails", "idea"),
 ]
 
 PROJECTS = [
     # (name, description, status)
-    ("POS", "Open-source point of sale for small businesses.", "coming soon"),
+    ("POS", "Point of sale for small businesses. Open core, Pro later.", "coming soon"),
     ("express-version-api", "Versioned routes and APIs for Express.js.", "available"),
     ("more tools", "SDKs and utilities for payment integrations.", "in the lab"),
 ]
@@ -69,7 +69,7 @@ PROJECTS = [
 PRINCIPLES = [
     ("Secure by default", "secret scanning, signed releases, least privilege"),
     ("Documented", "if it isn't in the README, it doesn't exist"),
-    ("Open", "permissive licenses, public roadmap, PRs welcome"),
+    ("Clear licensing", "every repo says if it is open, free or paid"),
     ("Made in LATAM", "built for the way this region actually pays"),
 ]
 
