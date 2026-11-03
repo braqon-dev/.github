@@ -175,18 +175,29 @@ def plano(c, w, h, r, cx, cy):
             f'<path d="M43.56 73.56L56 86" stroke="#00b4d8" stroke-opacity=".8"/>'
             f'<circle cx="28" cy="58" r="{3.5/s:.2f}" fill="#00b4d8" stroke="none"/></g></g>')
 
+def lockup_v(color, cx, y, scale, animate=True):
+    """Mark above the wordmark, as on the org avatar: mark 2.1x the cap height, then a 0.6-cap gap."""
+    ms = 210 / MARK_H * scale
+    mx = cx - MARK_W * ms / 2
+    return (mark(color, mx, y, ms, animate)
+            + wordmark(color, cx - WORD_W * scale / 2, y + (210 + 60) * scale, scale, animate)), (mx, ms)
+
+
 def hero(c):
-    height, scale = 320, 0.8
+    height, scale, top = 420, 0.55, 40
+    logo, (mx, ms) = lockup_v(c["fg"], W / 2, top, scale)
+    y = top + (210 + 60 + 100) * scale  # bottom of the wordmark
     body = (
         f'<defs><radialGradient id="glow" cx="50%" cy="0%" r="70%"><stop offset="0" stop-color="{c["accent"]}" stop-opacity=".22"/>'
         f'<stop offset="1" stop-color="{c["accent"]}" stop-opacity="0"/></radialGradient></defs>'
         + panel(1, 1, W - 2, height - 2, c, rx=18, fill=c["bg"])
-        + plano(c, W, height, height * 0.42, W * 0.86, height * 0.6)
+        # the construction lines line up with the mark itself
+        + plano(c, W, height, 22 * ms, mx + 28 * ms, top + 58 * ms)
         + f'<rect x="1" y="1" width="{W-2}" height="{height-2}" rx="18" fill="url(#glow)"/>'
-        + lockup(c["fg"], (W - LOCKUP_W * scale) / 2, 34, scale)
-        + text(W / 2, 192, e(TAGLINE), c, size=26, weight=600, anchor="middle")
-        + text(W / 2, 224, e(SUB), c, size=15, color=c["muted"], font=MONO, anchor="middle")
-        + f'<text x="{W/2}" y="276" font-family="{e(MONO)}" font-size="17" text-anchor="middle">'
+        + logo
+        + text(W / 2, y + 56, e(TAGLINE), c, size=26, weight=600, anchor="middle")
+        + text(W / 2, y + 88, e(SUB), c, size=15, color=c["muted"], font=MONO, anchor="middle")
+        + f'<text x="{W/2}" y="{y + 138}" font-family="{e(MONO)}" font-size="17" text-anchor="middle">'
           f'<tspan fill="{c["accent"]}">{ORG}@github</tspan><tspan fill="{c["muted"]}">:~$ </tspan>'
           f'<tspan fill="{c["fg"]}">{e(PROMPT)}</tspan><tspan class="blink" fill="{c["accent"]}"> ▋</tspan></text>'
     )
@@ -311,7 +322,7 @@ def readme():
   {links}
 </p>
 
-<p align="center"><sub>maintained by <a href="https://github.com/braqon">@braqon</a> · hecho en Colombia 🇨🇴</sub></p>
+<p align="center"><sub>maintained by <a href="https://github.com/braqon">@braqon</a> · hecho en Colombia 🇨🇴 · <a href="https://braqon.dev/marca/">brand &amp; press kit</a></sub></p>
 
 {pic("s01", "what we build")}
 
@@ -336,8 +347,9 @@ def readme():
 {pic("s04", "contribute")}
 
 - 🐛 Found a bug? Open an issue in the project's repo using the templates.
-- 🔐 Found a vulnerability? **Don't open a public issue.** Read our [security policy](https://github.com/{ORG}/.github/blob/main/SECURITY.md).
+- 🔐 Found a vulnerability? **Don't open a public issue.** Read our [security policy](https://github.com/{ORG}/.github/blob/main/SECURITY.md) or write to **security@braqon.dev**.
 - 🤝 Want to help? Start with [CONTRIBUTING](https://github.com/{ORG}/.github/blob/main/CONTRIBUTING.md) and our [code of conduct](https://github.com/{ORG}/.github/blob/main/CODE_OF_CONDUCT.md).
+- 🏷️ Using the BRAQON name or logo? Read the [brand policy](https://braqon.dev/marca/). Licensing questions: **legal@braqon.dev**.
 - 🇨🇴 Hablamos español e inglés. Issues and PRs welcome in both.
 
 {pic("footer", "git push")}
@@ -350,7 +362,7 @@ def main():
         out.mkdir(parents=True, exist_ok=True)
         files = {
             "hero.svg": hero(c),
-            "s01.svg": section(1, "what we build", "// shipping in the open", c),
+            "s01.svg": section(1, "what we build", "// open where it counts", c),
             "s02.svg": section(2, "roadmap", "// where we're going", c),
             "s03.svg": section(3, "principles", "// how we build", c),
             "s04.svg": section(4, "contribute", "// PRs welcome", c),
