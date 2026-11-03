@@ -322,6 +322,13 @@ def main():
     (OUT / "assets" / "avatar.svg").write_text(avatar(), encoding="utf-8")
     (OUT / "README.md").write_text(readme(), encoding="utf-8")
     print("built profile/assets and profile/README.md")
+    # Members (and owners) see the README of the private braqon-dev/.github-private repo.
+    # Same content, with image paths pointing at this public repo so nothing is duplicated.
+    member = OUT.parent.parent / "dot-github-private" / "profile"
+    if member.is_dir():
+        raw = "https://raw.githubusercontent.com/braqon-dev/.github/main/profile/assets/"
+        (member / "README.md").write_text(readme().replace('"assets/', f'"{raw}'), encoding="utf-8")
+        print(f"built {member / 'README.md'}")
 
 
 if __name__ == "__main__":
