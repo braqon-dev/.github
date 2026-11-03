@@ -4,27 +4,39 @@
 </p>
 
 <p align="center">
-  <a href="https://braqon.dev"><img src="https://img.shields.io/badge/braqon.dev-0d1117?style=for-the-badge&logo=googlechrome&logoColor=white" alt="braqon.dev"/></a>
-  <a href="https://www.npmjs.com/org/braqon"><img src="https://img.shields.io/badge/npm-@braqon-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="npm @braqon"/></a>
-  <a href="https://github.com/braqon"><img src="https://img.shields.io/badge/maintainer-@braqon-181717?style=for-the-badge&logo=github&logoColor=white" alt="maintainer @braqon"/></a>
+  <a href="https://braqon.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/l-web.svg"/><img src="assets/light/l-web.svg" height="32" alt="BRAQON.DEV"/></picture></a>
+  <a href="https://www.npmjs.com/org/braqon"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/l-npm.svg"/><img src="assets/light/l-npm.svg" height="32" alt="@BRAQON"/></picture></a>
+  <a href="https://jsr.io/@braqon"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/l-jsr.svg"/><img src="assets/light/l-jsr.svg" height="32" alt="@BRAQON"/></picture></a>
+  <a href="https://x.com/braqondev"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/l-x.svg"/><img src="assets/light/l-x.svg" height="32" alt="@BRAQONDEV"/></picture></a>
+  <a href="https://www.linkedin.com/company/braqon/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/l-linkedin.svg"/><img src="assets/light/l-linkedin.svg" height="32" alt="BRAQON"/></picture></a>
+  <a href="https://www.youtube.com/@braqon"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/l-youtube.svg"/><img src="assets/light/l-youtube.svg" height="32" alt="@BRAQON"/></picture></a>
+  <a href="https://www.instagram.com/braqondev/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/l-instagram.svg"/><img src="assets/light/l-instagram.svg" height="32" alt="@BRAQONDEV"/></picture></a>
+  <a href="mailto:hola@braqon.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/l-mail.svg"/><img src="assets/light/l-mail.svg" height="32" alt="HOLA@BRAQON.DEV"/></picture></a>
 </p>
 
-<p align="center">
-  <a href="https://x.com/braqondev"><img src="https://img.shields.io/badge/@braqondev-000000?style=flat-square&logo=x&logoColor=white" alt="X @braqondev"/></a>
-  <a href="https://www.linkedin.com/company/braqon/"><img src="https://img.shields.io/badge/LinkedIn-BRAQON-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn BRAQON"/></a>
-  <a href="https://www.youtube.com/@braqon"><img src="https://img.shields.io/badge/YouTube-@braqon-FF0000?style=flat-square&logo=youtube&logoColor=white" alt="YouTube @braqon"/></a>
-  <a href="mailto:hola@braqon.dev"><img src="https://img.shields.io/badge/hola@braqon.dev-30363d?style=flat-square&logo=maildotru&logoColor=white" alt="hola@braqon.dev"/></a>
-</p>
+<p align="center"><sub>maintained by <a href="https://github.com/braqon">@braqon</a> · hecho en Colombia 🇨🇴</sub></p>
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s01.svg"/><img src="assets/light/s01.svg" width="100%" alt="what we build"/></picture>
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/projects.svg"/><img src="assets/light/projects.svg" width="100%" alt="projects"/></picture>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s02.svg"/><img src="assets/light/s02.svg" width="100%" alt="principles"/></picture>
+<p align="center">
+  <a href="https://www.npmjs.com/package/express-version-api"><img src="https://img.shields.io/npm/v/express-version-api?style=flat-square&logo=npm&label=express-version-api&color=00b4d8" alt="npm version"/></a>
+  <a href="https://jsr.io/@braqon/express-version-api"><img src="https://jsr.io/badges/@braqon/express-version-api" alt="JSR"/></a>
+  <a href="https://www.npmjs.com/package/express-version-api"><img src="https://img.shields.io/npm/dm/express-version-api?style=flat-square&color=0077b6" alt="npm downloads"/></a>
+  <a href="https://github.com/braqon-dev/express-version-api/actions"><img src="https://img.shields.io/github/actions/workflow/status/braqon-dev/express-version-api/ci.yml?branch=main&style=flat-square&label=CI" alt="CI"/></a>
+  <a href="https://github.com/braqon-dev/express-version-api"><img src="https://img.shields.io/github/stars/braqon-dev/express-version-api?style=flat-square&color=00b4d8" alt="stars"/></a>
+</p>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s02.svg"/><img src="assets/light/s02.svg" width="100%" alt="roadmap"/></picture>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/roadmap.svg"/><img src="assets/light/roadmap.svg" width="100%" alt="roadmap: now express-version-api, next BRAQON POS, later payments toolkit"/></picture>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s03.svg"/><img src="assets/light/s03.svg" width="100%" alt="principles"/></picture>
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/principles.svg"/><img src="assets/light/principles.svg" width="100%" alt="principles"/></picture>
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s03.svg"/><img src="assets/light/s03.svg" width="100%" alt="contribute"/></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s04.svg"/><img src="assets/light/s04.svg" width="100%" alt="contribute"/></picture>
 
 - 🐛 Found a bug? Open an issue in the project's repo using the templates.
 - 🔐 Found a vulnerability? **Don't open a public issue.** Read our [security policy](https://github.com/braqon-dev/.github/blob/main/SECURITY.md).
