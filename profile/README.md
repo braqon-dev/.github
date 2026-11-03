@@ -14,7 +14,7 @@
   <a href="mailto:hola@braqon.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/l-mail.svg"/><img src="assets/light/l-mail.svg" height="32" alt="HOLA@BRAQON.DEV"/></picture></a>
 </p>
 
-<p align="center"><sub>maintained by <a href="https://github.com/braqon">@braqon</a> · hecho en Colombia 🇨🇴</sub></p>
+<p align="center"><sub>maintained by <a href="https://github.com/braqon">@braqon</a> · hecho en Colombia 🇨🇴 · <a href="https://braqon.dev/marca/">brand &amp; press kit</a></sub></p>
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s01.svg"/><img src="assets/light/s01.svg" width="100%" alt="what we build"/></picture>
 
@@ -39,8 +39,9 @@
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s04.svg"/><img src="assets/light/s04.svg" width="100%" alt="contribute"/></picture>
 
 - 🐛 Found a bug? Open an issue in the project's repo using the templates.
-- 🔐 Found a vulnerability? **Don't open a public issue.** Read our [security policy](https://github.com/braqon-dev/.github/blob/main/SECURITY.md).
+- 🔐 Found a vulnerability? **Don't open a public issue.** Read our [security policy](https://github.com/braqon-dev/.github/blob/main/SECURITY.md) or write to **security@braqon.dev**.
 - 🤝 Want to help? Start with [CONTRIBUTING](https://github.com/braqon-dev/.github/blob/main/CONTRIBUTING.md) and our [code of conduct](https://github.com/braqon-dev/.github/blob/main/CODE_OF_CONDUCT.md).
+- 🏷️ Using the BRAQON name or logo? Read the [brand policy](https://braqon.dev/marca/). Licensing questions: **legal@braqon.dev**.
 - 🇨🇴 Hablamos español e inglés. Issues and PRs welcome in both.
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/footer.svg"/><img src="assets/light/footer.svg" width="100%" alt="git push"/></picture>
