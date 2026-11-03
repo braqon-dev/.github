@@ -23,6 +23,9 @@ THEMES = {
     "light": dict(bg="#ffffff", panel="#f6f8fa", border="#d0d7de", fg="#1f2328",
                   muted="#59636e", accent="#0077b6"),
 }
+# The tail of the bq mark and of the Q is always BRAQON Cyan (see braqon-dev/brand).
+CYAN = "#00b4d8"
+INK = "#0b0f14"
 
 # ── Content ──────────────────────────────────────────────────────────────────
 
@@ -94,7 +97,7 @@ def panel(x, y, w, h, c, rx=14, fill=None, stroke=None, dashed=False):
             f'stroke="{stroke or c["border"]}"{dash}/>')
 
 
-# Geometric stroke wordmark, same glyphs as the personal profile (cap height 100, stroke 13).
+# Geometric stroke wordmark from the brand kit (cap height 100, stroke 13). The Q tail is the accent.
 S = 13
 h = S / 2
 GLYPHS = {
@@ -102,13 +105,13 @@ GLYPHS = {
     "B": (73, [f"M{h},50H44A21.75,21.75 0 0 1 44,{100-h}H{h}V{h}H40A21.75,21.75 0 0 1 40,50H{h}"]),
     "R": (74, [f"M{h},{100-h}V{h}H40A21.75,21.75 0 0 1 40,50H{h}", f"M36,50L70,{100-h}"]),
     "A": (84, [f"M3,{100-h}L42,{h}L81,{100-h}", "M21,68H63"]),
-    "Q": (100, ["circle", "M62,66L93,97"]),
+    "Q": (100, ["circle", "tail:M74,74L98,98"]),
     "O": (100, ["circle"]),
     "N": (78, [f"M{h},{100-h}V{h}L{78-h},{100-h}V{h}"]),
 }
 
 
-def wordmark(color, x, y, scale, animate=True):
+def wordmark(color, x, y, scale, animate=True, accent=CYAN):
     parts, cursor, i = [], 0, 0
     for ch in "BRAQON":
         width, strokes = GLYPHS[ch]
@@ -116,23 +119,51 @@ def wordmark(color, x, y, scale, animate=True):
             attrs = f'class="g" style="animation-delay:{0.12 * i:.2f}s" pathLength="1"' if animate else ""
             if stroke == "circle":
                 parts.append(f'<circle {attrs} cx="{cursor + 50}" cy="50" r="{50 - h}"/>')
+            elif stroke.startswith("tail:"):
+                parts.append(f'<path {attrs} stroke="{accent}" transform="translate({cursor},0)" d="{stroke[5:]}"/>')
             else:
                 parts.append(f'<path {attrs} transform="translate({cursor},0)" d="{stroke}"/>')
             i += 1
         cursor += width + 14
     return (f'<g transform="translate({x},{y}) scale({scale})" stroke="{color}" stroke-width="{S}" '
-            f'stroke-linejoin="round" fill="none">{"".join(parts)}</g>')
+            f'stroke-linecap="round" stroke-linejoin="round" fill="none">{"".join(parts)}</g>')
+
+
+# The bq mark: the b of Braian and the tail of the Q of Quintian. Box 62x92, stroke 12.
+MARK_W, MARK_H = 62, 92
+
+
+def mark(color, x, y, scale, animate=True, accent=CYAN):
+    attrs = (lambda d: f'class="g" style="animation-delay:{d:.2f}s" pathLength="1"') if animate else (lambda d: "")
+    return (f'<g transform="translate({x:.2f},{y:.2f}) scale({scale:.4f})" fill="none" stroke-width="12" '
+            f'stroke-linecap="round" stroke-linejoin="round">'
+            f'<path {attrs(0)} stroke="{color}" d="M6 6V58"/>'
+            f'<circle {attrs(0.1)} stroke="{color}" cx="28" cy="58" r="22"/>'
+            f'<path {attrs(0.3)} stroke="{accent}" d="M43.56 73.56L56 86"/></g>')
+
+
+WORD_W = 73 + 74 + 84 + 100 + 100 + 78 + 14 * 5
+
+
+def lockup(color, x, y, scale, animate=True):
+    """Mark + wordmark, in wordmark units: the mark is 1.42x the cap height, then a half-cap gap."""
+    ms = 142 / MARK_H
+    return (mark(color, x, y, ms * scale, animate)
+            + wordmark(color, x + (MARK_W * ms + 50) * scale, y + 21 * scale, scale, animate))
+
+
+LOCKUP_W = MARK_W * 142 / MARK_H + 50 + WORD_W
 
 
 # Drawn by default; the animation only hides strokes while it runs.
 DRAW_CSS = (".g{stroke-dasharray:1;stroke-dashoffset:0;animation:draw 1.1s cubic-bezier(.6,0,.2,1) backwards}"
-            "@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}")
+            "@keyframes draw{from{stroke-dashoffset:1;stroke-opacity:0}1%{stroke-opacity:1}to{stroke-dashoffset:0}}")
+# stroke-opacity hides the dot a round cap leaves on a zero-length dash before each stroke starts.
 
 # ── Assets ───────────────────────────────────────────────────────────────────
 
 def hero(c):
     height, scale = 320, 0.8
-    width = 73 + 74 + 84 + 100 + 100 + 78 + 14 * 5
     body = (
         '<defs><pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">'
         f'<circle cx="2" cy="2" r="1" fill="{c["border"]}"/></pattern>'
@@ -141,7 +172,7 @@ def hero(c):
         + panel(1, 1, W - 2, height - 2, c, rx=18, fill=c["bg"])
         + f'<rect x="1" y="1" width="{W-2}" height="{height-2}" rx="18" fill="url(#dots)" opacity=".6"/>'
         + f'<rect x="1" y="1" width="{W-2}" height="{height-2}" rx="18" fill="url(#glow)"/>'
-        + wordmark(c["fg"], (W - width * scale) / 2, 52, scale)
+        + lockup(c["fg"], (W - LOCKUP_W * scale) / 2, 34, scale)
         + text(W / 2, 192, e(TAGLINE), c, size=26, weight=600, anchor="middle")
         + text(W / 2, 224, e(SUB), c, size=15, color=c["muted"], font=MONO, anchor="middle")
         + f'<text x="{W/2}" y="276" font-family="{e(MONO)}" font-size="17" text-anchor="middle">'
@@ -212,11 +243,12 @@ def footer(c):
 
 
 def avatar():
-    """Square avatar for the org: white wordmark on black, like the Play Console logo."""
-    size, width = 1000, 73 + 74 + 84 + 100 + 100 + 78 + 14 * 5
-    scale = 760 / width
-    body = (f'<rect width="{size}" height="{size}" fill="#000"/>'
-            + wordmark("#ffffff", (size - width * scale) / 2, (size - 100 * scale) / 2, scale, animate=False))
+    """Square avatar for the org: the white bq mark with its cyan tail on Ink."""
+    size = 1000
+    scale = size * 0.62 / MARK_H
+    x = (size - MARK_W * scale) / 2 + size * 0.012  # optical nudge: the tail weighs on the right
+    body = (f'<rect width="{size}" height="{size}" fill="{INK}"/>'
+            + mark("#ffffff", x, (size - MARK_H * scale) / 2, scale, animate=False))
     return svg(size, body, width=size)
 
 # ── README ───────────────────────────────────────────────────────────────────
