@@ -9,6 +9,13 @@
   <a href="https://github.com/braqon"><img src="https://img.shields.io/badge/maintainer-@braqon-181717?style=for-the-badge&logo=github&logoColor=white" alt="maintainer @braqon"/></a>
 </p>
 
+<p align="center">
+  <a href="https://x.com/braqondev"><img src="https://img.shields.io/badge/@braqondev-000000?style=flat-square&logo=x&logoColor=white" alt="X @braqondev"/></a>
+  <a href="https://www.linkedin.com/company/braqon/"><img src="https://img.shields.io/badge/LinkedIn-BRAQON-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn BRAQON"/></a>
+  <a href="https://www.youtube.com/@braqon"><img src="https://img.shields.io/badge/YouTube-@braqon-FF0000?style=flat-square&logo=youtube&logoColor=white" alt="YouTube @braqon"/></a>
+  <a href="mailto:hola@braqon.dev"><img src="https://img.shields.io/badge/hola@braqon.dev-30363d?style=flat-square&logo=maildotru&logoColor=white" alt="hola@braqon.dev"/></a>
+</p>
+
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s01.svg"/><img src="assets/light/s01.svg" width="100%" alt="what we build"/></picture>
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/projects.svg"/><img src="assets/light/projects.svg" width="100%" alt="projects"/></picture>
