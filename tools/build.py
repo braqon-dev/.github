@@ -318,6 +318,8 @@ def readme():
   {pic("hero", "BRAQON · " + TAGLINE)}
 </p>
 
+<p align="center">Welcome to <b>BRAQON</b>, the home of Braian Quintian's personal projects: payments, POS and developer tools from LATAM, open source at the core.</p>
+
 <p align="center">
   {links}
 </p>
@@ -334,6 +336,14 @@ def readme():
   <a href="https://www.npmjs.com/package/express-version-api"><img src="https://img.shields.io/npm/dm/express-version-api?style=flat-square&color=0077b6" alt="npm downloads"/></a>
   <a href="https://github.com/{ORG}/express-version-api/actions"><img src="https://img.shields.io/github/actions/workflow/status/{ORG}/express-version-api/ci.yml?branch=main&style=flat-square&label=CI" alt="CI"/></a>
   <a href="https://github.com/{ORG}/express-version-api"><img src="https://img.shields.io/github/stars/{ORG}/express-version-api?style=flat-square&color=00b4d8" alt="stars"/></a>
+</p>
+
+<p align="center">
+  <img src="assets/soliqon/soliqon-icono-128.png" width="64" alt="Soliqon"/><br/>
+  <b>Coming soon: Soliqon</b><br/>
+  <sub>A native API client for macOS. No account, no cloud, no telemetry. Your requests are <code>.http</code> files in your own folder, versioned with git.</sub><br/>
+  <sub>Swift and SwiftUI · open source under Apache-2.0 · soon at soliqon.braqon.dev</sub><br/>
+  <sub><b>A <a href="https://braqon.dev">BRAQON</a> product</b></sub>
 </p>
 
 {pic("s02", "roadmap")}

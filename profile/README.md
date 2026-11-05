@@ -3,6 +3,8 @@
   <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/hero.svg"/><img src="assets/light/hero.svg" width="100%" alt="BRAQON · payments, POS and developer tools"/></picture>
 </p>
 
+<p align="center">Welcome to <b>BRAQON</b>, the home of Braian Quintian's personal projects: payments, POS and developer tools from LATAM, open source at the core.</p>
+
 <p align="center">
   <a href="https://braqon.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/l-web.svg"/><img src="assets/light/l-web.svg" height="32" alt="BRAQON.DEV"/></picture></a>
   <a href="https://www.npmjs.com/org/braqon"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/l-npm.svg"/><img src="assets/light/l-npm.svg" height="32" alt="@BRAQON"/></picture></a>
@@ -26,6 +28,14 @@
   <a href="https://www.npmjs.com/package/express-version-api"><img src="https://img.shields.io/npm/dm/express-version-api?style=flat-square&color=0077b6" alt="npm downloads"/></a>
   <a href="https://github.com/braqon-dev/express-version-api/actions"><img src="https://img.shields.io/github/actions/workflow/status/braqon-dev/express-version-api/ci.yml?branch=main&style=flat-square&label=CI" alt="CI"/></a>
   <a href="https://github.com/braqon-dev/express-version-api"><img src="https://img.shields.io/github/stars/braqon-dev/express-version-api?style=flat-square&color=00b4d8" alt="stars"/></a>
+</p>
+
+<p align="center">
+  <img src="assets/soliqon/soliqon-icono-128.png" width="64" alt="Soliqon"/><br/>
+  <b>Coming soon: Soliqon</b><br/>
+  <sub>A native API client for macOS. No account, no cloud, no telemetry. Your requests are <code>.http</code> files in your own folder, versioned with git.</sub><br/>
+  <sub>Swift and SwiftUI · open source under Apache-2.0 · soon at soliqon.braqon.dev</sub><br/>
+  <sub><b>A <a href="https://braqon.dev">BRAQON</a> product</b></sub>
 </p>
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/dark/s02.svg"/><img src="assets/light/s02.svg" width="100%" alt="roadmap"/></picture>
